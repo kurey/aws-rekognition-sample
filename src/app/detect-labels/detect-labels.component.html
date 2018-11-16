@@ -1,0 +1,10 @@
+<input type="file" accept="image/png, image/jpeg" (change)="onChangeFile($event.target.files)">
+
+<div class="rekognition">
+  <img *ngIf="img" [src]="img" height="250px">
+  <div class="labels">
+    <div *ngFor="let label of labels">
+      <p>{{ getName(label) }}({{ getConfidence(label) }})</p>
+    </div>
+  </div>
+</div>

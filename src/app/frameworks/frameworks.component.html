@@ -1,0 +1,14 @@
+<h1>{{ title }}</h1>
+
+<p>今回のハンズオンで利用しているフレームワークは？</p>
+
+<app-select-framework
+    [frameworks]='frameworks'
+    (selected)='selectedFramework=$event' >
+</app-select-framework>
+
+<p *ngIf='selectedFramework'>
+  {{ correct() }}
+</p>
+
+<button [routerLink]="['/']">app.component</button>
