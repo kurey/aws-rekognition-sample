@@ -8,7 +8,9 @@ import { SelectFrameworkComponent } from './frameworks/select-framework/select-f
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
 import { DetectLabelsComponent } from './detect-labels/detect-labels.component';
-import { AwsService } from './services/aws.service';
+import { AwsService } from './services/aws/aws.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule, MatChipsModule, MatCardModule, MatProgressBarModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,12 @@ import { AwsService } from './services/aws.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatChipsModule,
+    MatCardModule,
+    MatProgressBarModule
   ],
   providers: [
     AwsService

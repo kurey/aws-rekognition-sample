@@ -1,9 +1,27 @@
+.container {
+    margin: 2%;
+}
 .rekognition {
     display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
     padding: 1rem;
 }
 
 .labels {
     font-size: 1rem;
     margin-left: 1rem;
+
+    .label {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .percentage {
+        font-size: 0.6rem;
+    }
+}
+
+input {
+    display: none;
 }

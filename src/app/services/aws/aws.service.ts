@@ -32,7 +32,7 @@ export class AwsService {
 
     // RekognitionのAPIバージョン
     AWS.config.apiVersions = {
-      rekognition: '2016-06-27'
+      rekognition: '2016-06-27',
     };
   }
 
@@ -55,6 +55,27 @@ export class AwsService {
     };
     // 画像認識リクエスト
     rekognition.detectLabels(params, (error, data) => {
+      callback(data, error);
+    });
+  }
+
+  /**
+   * テキスト検出
+   * @param image 
+   * @param callback 
+   */
+  detectText(
+    image,
+    callback?: (response: AWS.Rekognition.Types.DetectTextResponse, error: AWS.AWSError) => void
+  ) {
+    const rekognition = new AWS.Rekognition();
+    const params: AWS.Rekognition.DetectTextRequest = {
+      Image: {
+        Bytes: image
+      }
+    };
+    // テキスト検出
+    rekognition.detectText(params, (error, data) => {
       callback(data, error);
     });
   }
